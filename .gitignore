@@ -32,3 +32,6 @@ Desktop.ini
 .env
 .env.*
 !*.env.example
+
+# Local UI previews
+.ui_preview/
