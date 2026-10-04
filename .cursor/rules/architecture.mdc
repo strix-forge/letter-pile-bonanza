@@ -1,0 +1,11 @@
+---
+description: Keep game rules separate from pygame rendering
+alwaysApply: true
+---
+
+# Architecture
+
+- Put pile, scoring, and dictionary logic in `pile.py`, `scoring.py`, and `words.py`. Those modules must not import pygame.
+- Put drawing in `render.py`. Put the window and event loop in `app.py`.
+- Tests in `tests/` cover rules only. Do not create a pygame display in tests.
+- Package import name is `letter_pile_bonanza`. Window caption is `Letter Pile Bonanza`.

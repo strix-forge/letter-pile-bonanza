@@ -1,0 +1,23 @@
+---
+description: Python conventions for this repo
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python
+
+- Target Python 3.10+; type-hint public functions.
+- Prefer small functions and dataclasses for pile letters (character, position, id).
+- Install and run via `python -m pip` and `python -m pytest`.
+- Do not commit `.venv/` or `__pycache__/`.
+- Example: letter removal is a multiset subtract, not “any matching character globally without counts”.
+
+```python
+# BAD: ignores how many copies are in the pile
+if all(ch in pile_letters for ch in word):
+    ...
+
+# GOOD: consume one instance per letter in the word
+if pile.can_spell(word):
+    pile.remove_word(word)
+```
